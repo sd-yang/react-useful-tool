@@ -1,5 +1,4 @@
 import qs from 'qs';
-import { useCallback } from 'react';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -8,7 +7,7 @@ interface Config extends RequestInit {
   token?: string;
 }
 
-const request = async (
+export const request = async (
   endPoint: string,
   { token, data, headers, ...rest }: Config = {}
 ) => {
@@ -41,11 +40,4 @@ const request = async (
         return Promise.reject(data);
       }
     });
-};
-
-export const useHttp = () => {
-  // 为所有请求添加 token 之类的信息操作
-  return useCallback((...[endPoint, config]: Parameters<typeof request>) => {
-    request(endPoint, { ...config });
-  }, []);
 };

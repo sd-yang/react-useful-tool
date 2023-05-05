@@ -2,7 +2,7 @@ import qs from 'qs';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
-interface Config extends RequestInit {
+export interface Config extends RequestInit {
   data?: object;
   token?: string;
 }

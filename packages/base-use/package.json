@@ -1,0 +1,16 @@
+{
+  "name": "base-use",
+  "version": "1.0.0",
+  "description": "react base use",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,14 +1,14 @@
-interface NumObj {
+export interface NumObj {
   [K: number]: any;
 }
 
-interface TreeArray {
+export interface TreeArray {
   name: string;
   id: number;
   pid: number;
 }
 
-interface TreeData {
+export interface TreeData {
   name: string;
   id: number;
   pid: number;

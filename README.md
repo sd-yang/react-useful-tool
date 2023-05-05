@@ -72,6 +72,6 @@ module.exports = config
 
 ### Hooks
 
-- useMount
+- index
 
 ### Utils

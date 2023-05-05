@@ -1,3 +1,5 @@
+import { NumObj, TreeArray, TreeData } from '../types/tree';
+
 /**
  * 操作树相关数据的方法
  */

@@ -1,4 +1,4 @@
-import { arrayToTree } from '../utils/tree';
+import { arrayToTree } from '../tree';
 const arr = [
   { name: '小明', id: 1, pid: 0 },
   { name: '小花', id: 11, pid: 1 },

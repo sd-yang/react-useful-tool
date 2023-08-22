@@ -2,7 +2,8 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es2021: true
+    es2021: true,
+    "jest": true
   },
   root: true,
   extends: [
@@ -33,6 +34,6 @@ module.exports = {
     "react-hooks/exhaustive-deps": "off"
   },
   "globals": {
-    "RequestInit": "readonly",
+    "RequestInit": "readonly"
   }
 };

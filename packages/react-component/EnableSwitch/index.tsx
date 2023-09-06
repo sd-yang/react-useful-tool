@@ -2,13 +2,13 @@ import { Switch, SwitchProps } from 'antd';
 import React, { useState } from 'react';
 
 interface EnableSwitch extends SwitchProps {
-  customRequest?: <T = unknown>(params: unknown) => Promise<T>;
+  request?: <T = unknown>(params: unknown) => Promise<T>;
   changeSuccess?: (params: unknown) => void;
   changeFail?: (checked: boolean, e: Error) => void;
 }
 
 export const EnableSwitch: React.FC<EnableSwitch> = ({
-  customRequest,
+  request,
   changeSuccess,
   changeFail,
   ...restProps
@@ -16,9 +16,9 @@ export const EnableSwitch: React.FC<EnableSwitch> = ({
   const [loading, setLoading] = useState(false);
 
   const switchChange = (checked: boolean) => {
-    if (!customRequest) return;
+    if (!request) return;
     setLoading(true);
-    customRequest(checked)
+    request(checked)
       .then((res) => {
         setLoading(false);
         changeSuccess?.(res);

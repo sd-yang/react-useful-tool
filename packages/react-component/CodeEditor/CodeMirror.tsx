@@ -1,6 +1,10 @@
+import { json } from '@codemirror/lang-json';
 import { python } from '@codemirror/lang-python';
-import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
-import React from 'react';
+import CodeMirror, {
+  Extension,
+  ReactCodeMirrorProps
+} from '@uiw/react-codemirror';
+import React, { useMemo } from 'react';
 
 const goLang = `import banana
 class Monkey:
@@ -13,22 +17,37 @@ class Monkey:
     def feeding_frenzy(self):
         self.eat(9.25)
         return "Yum yum"
-
-        1. 小屏幕用不用
-        2. 筹备会 线下和司仪见见
-        3. 人数 喜糖袋准备 250个
 `;
 
-interface CodeParams extends ReactCodeMirrorProps {}
+const extensionMap: Record<string, Extension> = {
+  json: json(),
+  python: python()
+};
 
-export const CodeMirrorEditor = ({ theme = 'light', onChange }: CodeParams) => {
+interface CodeParams extends ReactCodeMirrorProps {
+  languages?: string[];
+}
+
+export const CodeMirrorEditor = ({
+  value,
+  theme = 'light',
+  languages = ['python'],
+  ...rest
+}: CodeParams) => {
+  const setExtension = useMemo(() => {
+    return languages?.reduce((prev, language) => {
+      if (!extensionMap[language]) return prev;
+      return [...prev, extensionMap[language]];
+    }, [] as Extension[]);
+  }, [languages]);
+
   return (
     <CodeMirror
       height='200px'
       theme={theme}
-      value={goLang}
-      onChange={onChange}
-      extensions={[python()]}
+      value={value || goLang}
+      extensions={setExtension}
+      {...rest}
     />
   );
 };

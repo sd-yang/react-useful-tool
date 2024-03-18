@@ -5,6 +5,7 @@ import CodeMirror, {
   ReactCodeMirrorProps
 } from '@uiw/react-codemirror';
 import React, { useMemo } from 'react';
+import './CodeMirror.css';
 
 const goLang = `import banana
 class Monkey:

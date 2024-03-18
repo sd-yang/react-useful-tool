@@ -1,25 +1,16 @@
 import { CodeMirrorEditor, EnableSwitch } from '@ak/react-components';
-import { useState } from 'react';
+import request from '@ak/utils';
+
+const get = request.fetchGet;
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const enableStatus = () => {
+    return get('/test', {});
+  };
   return (
     <>
-      <EnableSwitch />
+      <EnableSwitch request={enableStatus} />
       <CodeMirrorEditor />
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }

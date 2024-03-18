@@ -20,11 +20,15 @@ export const EnableSwitch: React.FC<EnableSwitch> = ({
     setLoading(true);
     request(checked)
       .then((res) => {
+        console.log(res);
+        
         setLoading(false);
         changeSuccess?.(res);
       })
       .catch((e) => {
         setLoading(false);
+        console.log(e);
+        
         changeFail?.(checked, e);
       });
   };

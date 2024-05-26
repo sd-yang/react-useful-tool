@@ -1,4 +1,4 @@
-import { CodeMirrorEditor, EnableSwitch } from '@ak/react-components';
+import { CodeMirrorEditor, EnableSwitch, SortableTable } from '@ak/react-components';
 import request from '@ak/utils';
 
 const get = request.fetchGet;
@@ -11,6 +11,8 @@ function App() {
     <>
       <EnableSwitch request={enableStatus} />
       <CodeMirrorEditor />
+
+      <SortableTable />
     </>
   );
 }

@@ -26,6 +26,7 @@
     "@types/react": "^18.2.15"
   },
   "peerDependencies": {
-    "antd": "^5.8.4"
+    "antd": "^5.8.4",
+    "@alifd/next": "^1.27.11"
   }
 }

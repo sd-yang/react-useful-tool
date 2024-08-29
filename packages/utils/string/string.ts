@@ -16,3 +16,17 @@ export const parseAreaValue = (
     return areaArray.join(splitStr);
   }
 };
+
+/**
+ * 获取格式化后的json字符串
+ */
+export const getJsonStr = (json: string) => {
+  try {
+    if (typeof json === 'object') {
+      return JSON.stringify(json, null, 2);
+    }
+    return JSON.stringify(JSON.parse(json), null, 2);
+  } catch(e) {
+    return json;
+  }
+};

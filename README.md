@@ -26,4 +26,5 @@
 
 #### Fusion UI
 
-1. [SortableTable](./packages/react-component/ProTable/FusionTable/SortableTable/index.tsx)
+1. [SortableTable](./packages/react-component/ProTable/FusionTable/SortableTable/index.tsx) 使用fusion table组件封装，可以进行拖拽排序
+

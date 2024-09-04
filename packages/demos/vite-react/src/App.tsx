@@ -1,5 +1,6 @@
-import { CodeMirrorEditor, EnableSwitch, SortableTable } from '@ak/react-components';
+import { CodeMirrorEditor, EnableSwitch, EditTable } from '@ak/react-components';
 import request from '@ak/utils';
+import { columns, data } from './components/tableData';
 
 const get = request.fetchGet;
 
@@ -10,9 +11,11 @@ function App() {
   return (
     <>
       <EnableSwitch request={enableStatus} />
+      
       <CodeMirrorEditor />
 
-      <SortableTable />
+      {/* <SortableTable /> */}
+      <EditTable columns={columns} dataSource={data} />
     </>
   );
 }

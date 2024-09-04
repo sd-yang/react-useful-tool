@@ -12,6 +12,7 @@
   "dependencies": {
     "@ak/react-components": "workspace:^",
     "@ak/utils": "workspace:^",
+    "@alifd/next": "^1.27.11",
     "antd": "^5.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

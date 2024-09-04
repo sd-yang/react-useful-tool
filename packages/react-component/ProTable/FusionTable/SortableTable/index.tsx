@@ -1,6 +1,5 @@
-import { Table } from '@alifd/next';
-import '@alifd/next/lib/table/index.css';
 import React, { useContext, useMemo } from 'react';
+import { Table, Button } from '@alifd/next';
 
 import type { DragEndEvent } from '@dnd-kit/core';
 import { DndContext } from '@dnd-kit/core';
@@ -12,7 +11,6 @@ import {
   verticalListSortingStrategy
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { Button } from 'antd';
 
 // @ts-ignore
 const { SelectionRow } = Table;
@@ -22,13 +20,13 @@ const DragHandle: React.FC = () => {
   const { setActivatorNodeRef, listeners } = useContext(RowContext);
   return (
     <Button
-      type='text'
+      text
       size='small'
-      icon={'TTTT'}
+      type='primary'
       style={{ cursor: 'move' }}
       ref={setActivatorNodeRef}
       {...listeners}
-    />
+    >TTTTT</Button>
   );
 };
 
